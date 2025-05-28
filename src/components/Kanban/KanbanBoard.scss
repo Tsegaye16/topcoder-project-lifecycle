@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.kanban-board {
+  width: 100%;
+  padding: $spacing-lg 0;
+  overflow: hidden;
+  position: relative;
+
+  &__columns {
+    display: flex;
+    gap: $spacing-md;
+    padding: 0 $spacing-md;
+    min-height: 500px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    position: relative; // Add positioning context
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .kanban-column {
+      flex-shrink: 0; /* Prevent columns from shrinking */
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-md;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+
+.project-lifecycle {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+  font-family: $font-family-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $text-primary;
+    margin: 0;
+
+    &--highlight {
+      color: #2a9d8f;
+    }
+  }
+
+  &__description {
+    padding: $spacing-md;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: $text-secondary;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .project-selector {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .kanban-board {
+    width: 100%;
+    margin-top: $spacing-lg;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-md;
+    gap: $spacing-md;
+
+    &__title {
+      font-size: 2rem;
+      order: 0;
+    }
+
+    &__description {
+      font-size: 1rem;
+      padding: $spacing-sm;
+      order: 1;
+    }
+
+    .project-selector {
+      order: 2;
+      width: 100%;
+    }
+
+    .kanban-board {
+      order: 3;
+      margin-top: $spacing-md;
+    }
+  }
+}

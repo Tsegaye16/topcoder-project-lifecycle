@@ -1,0 +1,41 @@
+@import "../variables";
+
+.project-lifecycle {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+  font-family: $font-family-primary;
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $text-primary;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__description {
+    margin-top: $spacing-lg;
+    padding: $spacing-md;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: $text-secondary;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-md;
+
+    &__title {
+      font-size: 2rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    &__description {
+      font-size: 1rem;
+      padding: $spacing-sm;
+    }
+  }
+}

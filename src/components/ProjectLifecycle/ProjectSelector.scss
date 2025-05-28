@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+
+.project-selector {
+  display: flex;
+  justify-content: center;
+  margin: $spacing-lg 0;
+
+  &__dropdown {
+    padding: 6px 6px 6px 8px;
+    font-size: 1rem;
+    font-family: $font-family-primary;
+    color: $text-primary;
+    background-color: $background-color;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 206px;
+    height: 34px;
+    gap: 16px;
+    transition: all 0.3s ease;
+    text-align: left;
+
+    &:hover {
+      border-color: darken($primary-color, 10%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+
+    option {
+      padding: $spacing-xs $spacing-sm;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__dropdown {
+      width: 100%;
+      width: 206px;
+      padding: $spacing-xs 0.03rem;
+      height: 34px;
+      gap: 16px;
+    }
+  }
+}

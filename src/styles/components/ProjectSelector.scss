@@ -1,0 +1,42 @@
+@import "../variables";
+
+.project-selector {
+  display: flex;
+  justify-content: center;
+  margin: $spacing-lg 0;
+
+  &__dropdown {
+    padding: $spacing-md $spacing-xl;
+    font-size: 1.1rem;
+    font-family: $font-family-primary;
+    color: $text-primary;
+    background-color: $background-color;
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 250px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: darken($primary-color, 10%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+
+    option {
+      padding: $spacing-md;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__dropdown {
+      width: 100%;
+      max-width: 300px;
+      padding: $spacing-sm $spacing-md;
+      font-size: 1rem;
+    }
+  }
+}
