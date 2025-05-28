@@ -21,6 +21,14 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
   onHeaderClick,
   columnIndex,
 }) => {
+  const sortedItems = React.useMemo(() => {
+    return [...column.items].sort((a, b) => {
+      const posA = a.verticalPosition ?? 0;
+      const posB = b.verticalPosition ?? 0;
+      return posA - posB;
+    });
+  }, [column.items]);
+
   const getBackgroundColor = (index: number, isActive: boolean) => {
     if (isActive) {
       return "#00797A";
@@ -35,11 +43,16 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
   };
 
   return (
-    <div className={`kanban-column ${isActive ? "active" : ""}`}>
+    <div
+      className={`kanban-column ${isActive ? "active" : ""}`}
+      data-column-id={column.id}
+    >
       <div
         className="kanban-column__header"
         onClick={() => onHeaderClick(column.id)}
-        style={{ backgroundColor: getBackgroundColor(columnIndex, isActive) }}
+        style={{
+          background: isActive ? "#00797A" : "white",
+        }}
       >
         <img
           src={column.icon}
@@ -50,23 +63,23 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
       </div>
       <div className="kanban-column__content">
         {showItems &&
-          column.items.map((item) => (
+          sortedItems.map((item) => (
             <div
               key={item.id}
+              className="kanban-column__item"
               data-item-id={item.id}
-              className={`kanban-column__item ${getConnectionClass(item)}`}
               title={item.tooltip}
             >
               {item.icon && (
                 <img
                   src={item.icon}
-                  alt=""
+                  alt={`${item.title} icon`}
                   className="kanban-column__item-icon"
                 />
               )}
               <div className="kanban-column__item-content">
                 <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                {item.description && <p>{item.description}</p>}
               </div>
             </div>
           ))}

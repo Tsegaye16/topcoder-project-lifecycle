@@ -11,8 +11,11 @@ export interface KanbanItem {
   description?: string;
   tooltip: string;
   icon?: string;
-  connectedTo?: string; // ID of the item this is connected to
-  position?: "start" | "end"; // Position of the item in the connection
+  connectedTo?: string | string[]; // ID or IDs of the items this is connected to
+  position?: "start" | "end" | "both"; // Position of the item in the connection
+  isVerticalConnection?: boolean; // Whether this item is connected vertically
+  verticalConnectionTarget?: string; // ID of the item to connect vertically to
+  verticalPosition?: number; // Position in the vertical stack (0-based)
 }
 
 export interface KanbanColumn {

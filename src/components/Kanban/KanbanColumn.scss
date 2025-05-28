@@ -58,46 +58,60 @@
 
   &__item {
     width: 175px;
-    height: 56px;
+    min-height: 56px;
+    height: auto;
     padding: $spacing-sm;
     background: #e9ecef !important;
     border-radius: 8px;
     margin-bottom: $spacing-md;
     cursor: help;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     z-index: 1;
-
     flex-shrink: 0;
+
+    &[data-item-id="dd1"] {
+      margin-top: 80px;
+    }
+
+    &[data-item-id="do2"] {
+      margin-top: 80px;
+    }
+
+    &[data-item-id="dc2"] {
+      margin-top: 80px;
+    }
 
     &-icon {
       width: 24px;
       height: 24px;
       flex-shrink: 0;
+      margin-top: 2px;
     }
 
     &-content {
       flex-grow: 1;
       min-width: 0;
+      margin-left: $spacing-sm;
     }
 
     h3 {
       margin: 0;
       font-size: 0.9rem;
       color: $text-primary;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.2;
+      word-wrap: break-word;
+      white-space: normal;
     }
 
     p {
-      margin: 0;
+      margin: 4px 0 0 0;
       font-size: 0.8rem;
       color: $text-secondary;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.2;
+      word-wrap: break-word;
+      white-space: normal;
     }
 
     &:last-child {
