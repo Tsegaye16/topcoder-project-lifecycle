@@ -12,7 +12,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dc1",
             title: "Start Engagement",
             icon: "/assets/icons/customer.png",
-            tooltip: "Begin customer engagement process",
+            tooltip:
+              "NASA initiated the project with Topcoder to redesign its drone control interface for safety and usability.",
             connectedTo: "do1",
             position: "start",
             verticalPosition: 0,

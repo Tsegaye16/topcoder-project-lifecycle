@@ -772,6 +772,12 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ columns, onReset }) => {
 
   return (
     <div className="kanban-board" ref={boardRef}>
+      <div className="kanban-board__progress-line">
+        <div className="middle-section"></div>
+        <span className="phase-label initiate">Initiate</span>
+        <span className="phase-label execute">Execute</span>
+        <span className="phase-label deliver">Deliver</span>
+      </div>
       <div className="kanban-board__columns" ref={columnsRef}>
         {columns.map((column, index) => (
           <KanbanColumn

@@ -2,6 +2,7 @@
 
 .kanban-board {
   position: relative;
+  padding-left: 10px;
 
   &__columns {
     display: flex;
@@ -9,6 +10,66 @@
     height: 100%;
     min-height: 800px;
     padding: 4px;
+  }
+
+  &__progress-line {
+    position: absolute;
+    left: 10px;
+    top: 13%;
+    bottom: 4%;
+    width: 4px;
+    background: #e0e0e0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 33.33%;
+      background: rgba(0, 121, 122, 0.3);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 33.33%;
+      background: rgba(0, 121, 122, 1);
+    }
+
+    .middle-section {
+      position: absolute;
+      left: 0;
+      top: 33.33%;
+      width: 100%;
+      height: 33.33%;
+      background: rgba(0, 121, 122, 0.6);
+    }
+
+    .phase-label {
+      position: absolute;
+      right: 15px;
+      transform: translateX(-100%);
+      font-size: 14px;
+      font-weight: 500;
+      color: #00797a;
+      white-space: nowrap;
+
+      &.initiate {
+        top: 20%;
+      }
+
+      &.execute {
+        top: 50%;
+      }
+
+      &.deliver {
+        top: 80%;
+      }
+    }
   }
 }
 
@@ -27,6 +88,11 @@
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
   transform: translateZ(0);
   margin-bottom: 8px;
+  transition: border-color 0.2s ease;
+
+  &.active {
+    border-color: #00797a;
+  }
 
   &__header {
     height: 102px;
@@ -40,6 +106,11 @@
     padding: $spacing-md;
     text-align: center;
     flex-shrink: 0;
+    background: #e9ecef;
+
+    .active & {
+      background: #00797a;
+    }
 
     &-icon {
       width: 32px;
@@ -167,10 +238,5 @@
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  &.active {
-    border-color: $primary-color;
-    color: white;
   }
 }
