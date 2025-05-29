@@ -51,7 +51,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
         className="kanban-column__header"
         onClick={() => onHeaderClick(column.id)}
         style={{
-          background: isActive ? "#00797A" : "white",
+          background: isActive ? "#00797A" : "#e9ecef",
         }}
       >
         <img

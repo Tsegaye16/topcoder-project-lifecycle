@@ -16,6 +16,7 @@ export interface KanbanItem {
   isVerticalConnection?: boolean; // Whether this item is connected vertically
   verticalConnectionTarget?: string; // ID of the item to connect vertically to
   verticalPosition?: number; // Position in the vertical stack (0-based)
+  isBidirectional?: boolean; // Whether this item has a bidirectional connection
 }
 
 export interface KanbanColumn {
