@@ -28,7 +28,12 @@ interface Connection {
   endY: number;
   isVertical?: boolean;
   direction?: "left" | "right";
-  connectionType?: "bottom-center" | "center-right" | "bidirectional";
+  connectionType?:
+    | "bottom-center"
+    | "center-right"
+    | "bidirectional"
+    | "top-down"
+    | "right-to-left";
 }
 
 const KanbanBoard: React.FC<KanbanBoardProps> = ({ columns, onReset }) => {
@@ -114,6 +119,66 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ columns, onReset }) => {
           endX: endRect.left - boardRect.left,
           endY: endRect.top - boardRect.top + endRect.height / 2,
           connectionType: "bidirectional",
+        });
+      }
+    }
+
+    // Add vertical connection between Requirement Study and Collaborates on Requirements
+    const reqStudyItem = boardRef.current.querySelector('[data-item-id="dd1"]');
+    const collabReqItem = boardRef.current.querySelector(
+      '[data-item-id="dd2"]'
+    );
+
+    if (reqStudyItem && collabReqItem) {
+      const reqRect = reqStudyItem.getBoundingClientRect();
+      const collabRect = collabReqItem.getBoundingClientRect();
+      const boardRect = boardRef.current.getBoundingClientRect();
+
+      const reqColumn = reqStudyItem.closest(".kanban-column");
+
+      if (reqColumn?.classList.contains("active")) {
+        const startX = reqRect.left - boardRect.left + reqRect.width * 0.5;
+        const startY = reqRect.bottom - boardRect.top;
+        const endY = collabRect.top - boardRect.top - 3;
+
+        newConnections.push({
+          startX,
+          startY,
+          endX: startX,
+          endY,
+          isVertical: true,
+          connectionType: "top-down",
+        });
+      }
+    }
+
+    // Add connection from Write Specification to Collaborates on Requirements
+    const writeSpecItem = boardRef.current.querySelector(
+      '[data-item-id="do2"]'
+    );
+    const collabReqItem2 = boardRef.current.querySelector(
+      '[data-item-id="dd2"]'
+    );
+
+    if (writeSpecItem && collabReqItem2) {
+      const writeSpecRect = writeSpecItem.getBoundingClientRect();
+      const collabRect = collabReqItem2.getBoundingClientRect();
+      const boardRect = boardRef.current.getBoundingClientRect();
+
+      const writeSpecColumn = writeSpecItem.closest(".kanban-column");
+      const collabColumn = collabReqItem2.closest(".kanban-column");
+
+      if (
+        writeSpecColumn?.classList.contains("active") &&
+        collabColumn?.classList.contains("active")
+      ) {
+        newConnections.push({
+          startX: writeSpecRect.left - boardRect.left - 2,
+          startY: writeSpecRect.top - boardRect.top + writeSpecRect.height / 2,
+          endX: collabRect.right - boardRect.left + 2,
+          endY: collabRect.top - boardRect.top + collabRect.height / 2,
+          isVertical: false,
+          connectionType: "right-to-left",
         });
       }
     }
