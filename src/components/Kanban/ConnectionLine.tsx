@@ -39,13 +39,11 @@ const ConnectionLine: React.FC<ConnectionLineProps> = ({
       return `M ${startX} ${startY} L ${endX} ${endY}`;
     }
 
-    // For vertical connections starting from bottom-center
     if (connectionType === "bottom-center") {
       const midY = startY + 40;
       return `M ${startX} ${startY} L ${startX} ${midY} L ${endX} ${midY} L ${endX} ${endY}`;
     }
 
-    // For vertical connections with horizontal segment
     if (direction === "left") {
       return `M ${startX} ${startY} L ${startX} ${endY} L ${endX} ${endY}`;
     } else {
@@ -96,63 +94,86 @@ const ConnectionLine: React.FC<ConnectionLineProps> = ({
       }}
     >
       <defs>
-        {/* Existing markers stay unchanged */}
+        {/* Adjusted markers for thinner line and consistent filled arrowheads */}
         <marker
           id="arrowhead-horizontal"
           markerWidth="6"
           markerHeight="6"
-          refX="4.5"
-          refY="2.5"
+          refX="5"
+          refY="3"
           orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 0 0 L 6 2.5 L 0 6 L 2 2.5 Z" fill="#00797A" />
+          <path
+            d="M 0 0 L 6 3 L 0 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
         <marker
           id="arrowhead-vertical"
           markerWidth="6"
           markerHeight="6"
-          refX="1"
-          refY="7"
+          refX="3"
+          refY="5"
           orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 6 0 L 0 3 L 6 6 Z" fill="#00797A" />
+          <path
+            d="M 0 0 L 6 0 L 3 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
-
-        {/* New directional markers */}
         <marker
           id="arrowhead-down"
           markerWidth="6"
           markerHeight="6"
-          refX="3.5"
-          refY="2"
+          refX="3"
+          refY="5"
           orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 0 0 L 6 0 L 3 6 Z" fill="#00797A" />
+          <path
+            d="M 0 0 L 6 0 L 3 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
         <marker
           id="arrowhead-up"
           markerWidth="6"
           markerHeight="6"
           refX="3"
-          refY="6"
-          orient="-90"
+          refY="1"
+          orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 0 6 L 6 6 L 3 0 Z" fill="#00797A" />
+          <path
+            d="M 0 6 L 6 6 L 3 0 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
         <marker
           id="arrowhead-right"
           markerWidth="6"
           markerHeight="6"
-          refX="6"
+          refX="5"
           refY="3"
           orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#00797A" />
+          <path
+            d="M 0 0 L 6 3 L 0 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
         <marker
           id="arrowhead-left"
@@ -163,35 +184,50 @@ const ConnectionLine: React.FC<ConnectionLineProps> = ({
           orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 6 0 L 0 3 L 6 6 L 4 3 Z" fill="#00797A" />
+          <path
+            d="M 6 0 L 0 3 L 6 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
         <marker
           id="arrowhead-start"
           markerWidth="6"
           markerHeight="6"
-          refX="0"
+          refX="1"
           refY="3"
           orient="180"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 6 0 L 0 3 L 6 6 Z" fill="#00797A" />
+          <path
+            d="M 6 0 L 0 3 L 6 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
         <marker
           id="arrowhead-end"
           markerWidth="6"
           markerHeight="6"
-          refX="6"
+          refX="5"
           refY="3"
           orient="0"
           markerUnits="userSpaceOnUse"
         >
-          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#00797A" />
+          <path
+            d="M 0 0 L 6 3 L 0 6 Z"
+            fill="#00797A"
+            stroke="#00797A"
+            strokeWidth="0.5"
+          />
         </marker>
       </defs>
       <path
         d={getPath()}
         stroke="#00797A"
-        strokeWidth="1"
+        strokeWidth="0.5" // Thinner line as requested
         strokeDasharray="3 4"
         markerEnd={getMarkerEnd()}
         markerStart={getMarkerStart()}

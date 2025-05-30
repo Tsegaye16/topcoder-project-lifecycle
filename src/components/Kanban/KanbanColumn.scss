@@ -183,6 +183,18 @@
     &[data-item-id="rev1"] {
       margin-top: 606px;
     }
+    &[data-item-id="revs"] {
+      margin-top: 606px;
+    }
+    &[data-item-id="reviewaccept"] {
+      margin-top: 525px;
+    }
+    &[data-item-id="challengeposting"] {
+      margin-top: 88px;
+    }
+    &[data-item-id="joinchallenge"] {
+      margin-top: 433px;
+    }
 
     &[data-item-id="rev2"] {
       margin-top: 35px;
@@ -204,6 +216,13 @@
       margin-top: 35px;
     }
 
+    &[data-item-id="autoScore"] {
+      margin-top: 784px;
+    }
+    &[data-item-id="marathonreview"] {
+      margin-top: 615px;
+    }
+
     &-icon {
       width: 24px;
       height: 24px;
@@ -212,7 +231,6 @@
     }
 
     &-content {
-      flex-grow: 1;
       min-width: 0;
       margin-left: $spacing-sm;
     }
