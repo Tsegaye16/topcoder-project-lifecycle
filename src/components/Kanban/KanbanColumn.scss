@@ -11,66 +11,6 @@
     min-height: 800px;
     padding: 4px;
   }
-
-  &__progress-line {
-    position: absolute;
-    left: 10px;
-    top: 13%;
-    bottom: 4%;
-    width: 4px;
-    background: #e0e0e0;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 33.33%;
-      background: rgba(0, 121, 122, 0.3);
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 33.33%;
-      background: rgba(0, 121, 122, 1);
-    }
-
-    .middle-section {
-      position: absolute;
-      left: 0;
-      top: 33.33%;
-      width: 100%;
-      height: 33.33%;
-      background: rgba(0, 121, 122, 0.6);
-    }
-
-    .phase-label {
-      position: absolute;
-      right: 15px;
-      transform: translateX(-100%);
-      font-size: 14px;
-      font-weight: 500;
-      color: #00797a;
-      white-space: nowrap;
-
-      &.initiate {
-        top: 20%;
-      }
-
-      &.execute {
-        top: 50%;
-      }
-
-      &.deliver {
-        top: 80%;
-      }
-    }
-  }
 }
 
 .kanban-column {
@@ -116,6 +56,34 @@
       width: 32px;
       height: 32px;
       flex-shrink: 0;
+
+      // Target SVG icons only
+      &[data-type="svg"] {
+        transition: filter 0.2s ease;
+
+        .active & {
+          filter: brightness(0) invert(1); // Converts SVG to white in active state
+        }
+      }
+    }
+
+    &-icon--fallback {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e9ecef; // Match inactive header background
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: 600;
+      color: $text-primary;
+
+      .active & {
+        background: #00797a; // Match active header background
+        color: #ffffff; // White text for active state
+      }
     }
 
     &-text {
@@ -153,7 +121,6 @@
     display: flex;
     align-items: flex-start;
     position: relative;
-    z-index: 1;
     flex-shrink: 0;
 
     &[data-item-id="dd1"] {
@@ -168,16 +135,16 @@
       margin-top: 80px;
     }
     &[data-item-id="dc3"] {
-      margin-top: 450px;
+      margin-top: 447px;
     }
     &[data-item-id="dc4"] {
-      margin-top: 35px;
+      margin-top: 38px;
     }
     &[data-item-id="com1"] {
       margin-top: 344px;
     }
     &[data-item-id="dd4"] {
-      margin-top: 180px;
+      margin-top: 175px;
     }
 
     &[data-item-id="rev1"] {
@@ -188,6 +155,9 @@
     }
     &[data-item-id="reviewaccept"] {
       margin-top: 525px;
+    }
+    &[data-item-id="reviewacceptidea"] {
+      margin-top: 450px;
     }
     &[data-item-id="challengeposting"] {
       margin-top: 88px;
@@ -222,6 +192,12 @@
     &[data-item-id="marathonreview"] {
       margin-top: 615px;
     }
+    &[data-item-id="reviewIdea"] {
+      margin-top: 607px;
+    }
+    &[data-item-id="prepareIdea"] {
+      margin-top: 50px;
+    }
 
     &-icon {
       width: 24px;
@@ -255,6 +231,48 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+.custom-kanban-tooltip,
+.react-tooltip {
+  z-index: 9999 !important; // Keep this for being on top
+  width: 180px !important; // Standardize on max-width
+  white-space: normal !important;
+  line-height: 1.4 !important;
+  padding: 6px 6px !important; // You can define padding, bg, color here or inline
+  background-color: #333; // Example: moving style from inline to SCSS
+  color: #fff; // Example: moving style from inline to SCSS
+  border-radius: 4px;
+  font-size: 12px;
+  overflow-wrap: break-word;
+}
+
+// Item content styling
+.kanban-column {
+  &__item {
+    &-content {
+      flex: 1;
+      min-width: 0; // This helps with text overflow in flex containers
+
+      h3 {
+        word-wrap: break-word;
+        white-space: normal;
+        overflow-wrap: break-word;
+        margin: 0 0 4px 0;
+        font-size: 0.95rem;
+        line-height: 1.3;
+      }
+
+      p {
+        word-wrap: break-word;
+        white-space: normal;
+        margin: 0;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #666;
+      }
     }
   }
 }

@@ -19,17 +19,24 @@ const ProjectLifecycle: React.FC = () => {
         <span>Project </span>
         <span className="project-lifecycle__title--highlight">Lifecycle</span>
       </h1>
-      <ProjectSelector
-        selectedProject={selectedProject}
-        onProjectChange={handleProjectChange}
-      />
+
+      <div className="project-lifecycle__selector-container">
+        <ProjectSelector
+          selectedProject={selectedProject}
+          onProjectChange={handleProjectChange}
+        />
+      </div>
+
       <div className="project-lifecycle__description">
         {KANBAN_DATA[selectedProject]?.description}
       </div>
-      <KanbanBoard
-        columns={KANBAN_DATA[selectedProject]?.columns || []}
-        key={selectedProject} // Force re-mount when project changes
-      />
+
+      <div className="project-lifecycle__board-container">
+        <KanbanBoard
+          columns={KANBAN_DATA[selectedProject]?.columns || []}
+          key={selectedProject}
+        />
+      </div>
     </div>
   );
 };

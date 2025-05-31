@@ -19,7 +19,7 @@ export interface KanbanItem {
   isBidirectional?: boolean; // Whether this item has a bidirectional connection
 }
 
-export interface KanbanColumn {
+export interface KanbanColumnType {
   id: ColumnType;
   title: string;
   icon: string;
@@ -28,7 +28,7 @@ export interface KanbanColumn {
 
 export interface KanbanData {
   [key: string]: {
-    columns: KanbanColumn[];
+    columns: KanbanColumnType[];
     description: React.ReactNode;
   };
 }

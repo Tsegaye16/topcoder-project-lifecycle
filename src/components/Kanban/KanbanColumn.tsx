@@ -1,6 +1,7 @@
 import React from "react";
+import { Tooltip } from "react-tooltip";
 import {
-  KanbanColumn as IKanbanColumn,
+  KanbanColumnType as IKanbanColumn,
   ColumnType,
   KanbanItem,
 } from "../../types/KanbanTypes";
@@ -29,18 +30,13 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
     });
   }, [column.items]);
 
-  const getBackgroundColor = (index: number, isActive: boolean) => {
-    if (isActive) {
-      return "#00797A";
-    }
-    return "#E9ECEF";
-  };
-
   const getConnectionClass = (item: KanbanItem) => {
     if (item.position === "start") return "connected-start";
     if (item.position === "end") return "connected-end";
     return "";
   };
+
+  const isSvgIcon = column.icon?.toLowerCase().endsWith(".svg");
 
   return (
     <div
@@ -48,39 +44,66 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
       data-column-id={column.id}
     >
       <div
-        className="kanban-column__header"
+        className={`kanban-column__header ${isActive ? "active" : ""}`}
         onClick={() => onHeaderClick(column.id)}
-        style={{
-          background: isActive ? "#00797A" : "#e9ecef",
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            onHeaderClick(column.id);
+          }
         }}
       >
-        <img
-          src={column.icon}
-          alt={`${column.title} icon`}
-          className="kanban-column__header-icon"
-        />
+        {column.icon ? (
+          <img
+            src={column.icon}
+            alt={`${column.title} icon`}
+            className="kanban-column__header-icon"
+            data-type={isSvgIcon ? "svg" : "png"}
+            onError={(e) => {
+              e.currentTarget.src = "/assets/fallback-icon.svg";
+            }}
+          />
+        ) : (
+          <div className="kanban-column__header-icon kanban-column__header-icon--fallback">
+            {column.title.charAt(0)}
+          </div>
+        )}
         <span className="kanban-column__header-text">{column.title}</span>
       </div>
+
       <div className="kanban-column__content">
         {showItems &&
           sortedItems.map((item) => (
             <div
               key={item.id}
-              className="kanban-column__item"
+              className={`kanban-column__item ${getConnectionClass(item)}`}
               data-item-id={item.id}
-              title={item.tooltip}
+              data-tooltip-id={`tooltip-${item.id}`}
+              data-tooltip-content={item.tooltip}
+              aria-label={item.tooltip}
             >
               {item.icon && (
                 <img
                   src={item.icon}
                   alt={`${item.title} icon`}
                   className="kanban-column__item-icon"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
               )}
               <div className="kanban-column__item-content">
                 <h3>{item.title}</h3>
                 {item.description && <p>{item.description}</p>}
               </div>
+              {item.tooltip && (
+                <Tooltip
+                  id={`tooltip-${item.id}`}
+                  place="top"
+                  className="custom-kanban-tooltip"
+                />
+              )}
             </div>
           ))}
       </div>
