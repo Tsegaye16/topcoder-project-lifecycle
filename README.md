@@ -8,6 +8,10 @@
 
 This project implements a Kanban-style, role-based timeline component for Topcoder, built with **React.js**, **TypeScript**, and **SCSS**. The component visualizes the customer engagement process across key roles (Customer, Delivery Platform, Operation, Community, and Review) using a dynamic, interactive timeline. The application is designed for reusability, supports desktop and mobile layouts, and is deployed on **Netlify** for live preview.
 
+    👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
+
+<a href="https://<your-netlify-subdomain>.netlify.app" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px; font-family: 'Nunito', sans-serif;">View Live Demo</a>
+
 ## Features
 
 - **Kanban-Style Timeline**: Displays a role-based timeline with columns for Customer, Delivery Platform, Operation, Community, and Review, following the provided Figma design.
