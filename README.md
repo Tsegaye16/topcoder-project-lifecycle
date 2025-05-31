@@ -1,5 +1,11 @@
 # Topcoder Engagement Timeline Component
 
+<div style="display: flex; justify-content: space-between;">
+  <img src="public/demo1.png" alt="" width="45%" />
+  <img src="public/demo2.png" alt="" width="45%" />
+
+</div>
+
 This project implements a Kanban-style, role-based timeline component for Topcoder, built with **React.js**, **TypeScript**, and **SCSS**. The component visualizes the customer engagement process across key roles (Customer, Delivery Platform, Operation, Community, and Review) using a dynamic, interactive timeline. The application is designed for reusability, supports desktop and mobile layouts, and is deployed on **Netlify** for live preview.
 
 ## Features
