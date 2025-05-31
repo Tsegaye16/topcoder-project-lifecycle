@@ -10,7 +10,7 @@ This project implements a Kanban-style, role-based timeline component for Topcod
 
     👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
 
-<a href="https://<your-netlify-subdomain>.netlify.app" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px; font-family: 'Nunito', sans-serif;">View Live Demo</a>
+<a href="https://lively-crepe-4b4b21.netlify.app/" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px; font-family: 'Nunito', sans-serif;">View Live Demo</a>
 
 ## Features
 
