@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectLifecycle from "./components/ProjectLifecycle/ProjectLifecycle";
-import "./App.css";
 
 function App() {
   return (

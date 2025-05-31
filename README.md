@@ -1,46 +1,152 @@
-# Getting Started with Create React App
+# Topcoder Engagement Timeline Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements a Kanban-style, role-based timeline component for Topcoder, built with **React.js**, **TypeScript**, and **SCSS**. The component visualizes the customer engagement process across key roles (Customer, Delivery Platform, Operation, Community, and Review) using a dynamic, interactive timeline. The application is designed for reusability, supports desktop and mobile layouts, and is deployed on **Netlify** for live preview.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Kanban-Style Timeline**: Displays a role-based timeline with columns for Customer, Delivery Platform, Operation, Community, and Review, following the provided Figma design.
+- **Dynamic Data Loading**: Initially, only the Customer column is populated. Clicking a column header populates it and all columns to its left, while hiding columns to its right.
+- **Challenge Type Dropdown**: Supports five challenge types (Design Challenge, Development Challenge, QA Challenge, Marathon Match, Ideation Challenge) to control displayed data and text above the Kanban board.
+- **Tooltips**: Displays tooltips on hover (or tap on mobile) for each item in the Kanban board, based on static data provided in the design.
+- **Responsive Design**: Fully responsive for desktop and mobile, with horizontal scrolling on mobile for the Kanban board.
+- **Static Assets**: All images and icons are served from the `/public/assets/icons` folder.
+- **TypeScript**: Strongly typed components for type safety and maintainability.
+- **SCSS Styling**: Scoped styles with proper class naming to avoid conflicts with other CSS in a larger codebase.
+- **Reusability**: Modular, generic components designed for easy integration into a larger Next.js application.
+- **Fonts**: Uses Figtree and Nunito from Google Fonts.
+- **Deployment**: Deployed on Netlify for live access.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Framework**: React
+- **Language**: TypeScript
+- **Styling**: SCSS
+- **Fonts**: Figtree, Nunito (Google Fonts)
+- **Deployment**: Netlify
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+To run this project locally, ensure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js**: v16 or higher
+- **npm** or **yarn**: Package manager for dependencies
+- **Git**: For cloning the repository
 
-### `npm run build`
+## Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Clone the Repository**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/Tsegaye16/topcoder-project-lifecycle
+    cd topcoder-project-lifecycle
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Install Dependencies:
+    Using npm:
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    Or using yarn:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    yarn install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    Run the Development Server:
+    Start the React.js development server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```bash
+    npm start
+    ```
 
-## Learn More
+    Or with yarn:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    yarn start
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    The application will be available at http://localhost:3000.
+
+    #### Build for Production:
+
+    To create an optimized production build:
+
+    ```bash
+    npm run build
+    ```
+
+    Then, preview the production build locally:
+
+    ```bash
+    npm run start
+    ```
+
+    #### Verifying and Testing Locally
+
+    To verify the functionality and test the application locally:
+    Access the Application:
+    Open http://localhost:3000 in your browser after starting the development server.
+
+    - Test the Kanban Board:
+
+      - Initial State: Ensure only the Customer column is populated with data on page load.
+
+        - Column Interaction: Click on any column header (e.g., Operation) to populate it and all columns to its left, while hiding columns to its right.
+
+        - Dropdown Functionality: Select different challenge types from the dropdown (Design Challenge, Development Challenge, etc.) and verify:
+
+          - The Kanban board resets to show only the Customer column.
+
+          - The text above the board updates based on the selected challenge type.
+
+        - Tooltips: Hover over (or tap on mobile) items in the Kanban board to verify tooltips display the correct content per the design.
+
+        - Responsive Design: Resize the browser window or use developer tools to simulate mobile devices. Verify:
+
+          - The layout adapts to mobile design.
+          - Horizontal scrolling works for the Kanban board on mobile.
+
+      - Check Styling:
+
+        - Ensure fonts (Figtree, Nunito) are applied correctly.
+
+        - Verify that SCSS styles match the Figma design and are scoped to avoid conflicts.
+
+        - Confirm all assets (images, icons) load correctly from /public/assets.
+
+    - TypeScript Validation:
+      Run the TypeScript compiler to check for type errors:
+      ```bash
+       npm run tsc
+      ```
+    - Deployment on Netlify
+
+      The application is deployed on Netlify for live access. To replicate or update the deployment:
+
+      - Install Netlify CLI (optional for local testing):
+
+      ```bash
+      npm install -g netlify-cli
+      ```
+
+      - Build the Project:
+        Ensure a production build is created:
+        ```bash
+        npm run build
+        ```
+        - Deploy to Netlify:
+          Using Netlify CLI:
+        ````bash
+        netlify deploy
+        Follow prompts to log in and select the /out folder or connect to a Netlify site.
+        For production deployment:
+        ```bash
+        netlify deploy --prod
+        ````
+
+### Live URL
+
+The deployed application is accessible at:  
+ 👉👉👉👉 https://lively-crepe-4b4b21.netlify.app/

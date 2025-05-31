@@ -58,7 +58,7 @@ export const KANBAN_DATA: KanbanData = {
         items: [
           {
             id: "dd1",
-            title: "Requirement and Feasible Study",
+            title: "Requirement & Feasible Study",
             icon: "/assets/icons/topcoder.png",
             tooltip:
               "Topcoder analyzed NASA’s requirements and confirmed that the redesign was feasible with available tools and timelines.",
@@ -92,7 +92,7 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "dd4",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/topcoder.png",
             tooltip:
               "Provided design briefs, references, and support to help designers align with NASA's vision.",
@@ -121,7 +121,7 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "do2",
-            title: "Write Specification",
+            title: "Write Specifications",
             icon: "/assets/icons/specification.svg",
             tooltip:
               "Detailed specs were written for layout, components, interactions, and design constraints.",
@@ -174,7 +174,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do7",
             title: "Prepare Deliverables",
             icon: "/assets/icons/prepareDeliverable.svg",
-            tooltip: "Prepare and package final design deliverables",
+            tooltip:
+              "Topcoder prepared final design assets and packaged deliverables for NASA’s internal use.",
             verticalPosition: 6,
             connectedTo: "do6",
             position: "end",
@@ -190,16 +191,18 @@ export const KANBAN_DATA: KanbanData = {
             id: "com1",
             title: "Join Challenge",
             icon: "/assets/icons/community.svg",
-            tooltip: "Community members join the challenge",
+            tooltip:
+              "Designers joined to contribute creative UI/UX solutions aligned with NASA’s needs.",
             verticalPosition: 0,
             connectedTo: "do4",
             position: "end",
           },
           {
             id: "com2",
-            title: "Ask question",
+            title: "Ask questions",
             icon: "/assets/icons/askquestion.svg",
-            tooltip: "Community members can ask questions about the challenge",
+            tooltip:
+              "Participants asked questions in the forum to clarify functionality, visuals, or design scope.",
             verticalPosition: 1,
             connectedTo: ["com1", "com3"],
             position: "both",
@@ -208,10 +211,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "com3",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/documentationAndForum.svg",
             tooltip:
-              "Access documentation and participate in forum discussions",
+              "Used shared documents, reference images, and the forum to guide and validate design directions.",
             verticalPosition: 2,
             connectedTo: ["com2", "dd4", "com4"],
             position: "both",
@@ -223,7 +226,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "com4",
             title: "Submit Round 1 Designs",
             icon: "/assets/icons/submitRound1Design.svg",
-            tooltip: "Community members submit their initial design proposals",
+            tooltip:
+              "Designers submitted their initial concepts for review based on challenge requirements.",
             verticalPosition: 3,
             connectedTo: ["com3", "rev1"],
             position: "both",
@@ -233,7 +237,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "com5",
             title: "Submit Round 2 Designs",
             icon: "/assets/icons/submitRound1Design.svg",
-            tooltip: "Community members submit their revised design proposals",
+            tooltip:
+              "Refined versions of the designs were submitted, incorporating feedback from Round 1.",
             verticalPosition: 4,
             connectedTo: "do5",
             position: "end",
@@ -249,7 +254,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "rev1",
             title: "Review Round 1 Designs",
             icon: "/assets/icons/reviewRound.svg",
-            tooltip: "Review panel evaluates initial design submissions",
+            tooltip:
+              "Initial designs were evaluated for layout clarity, feature coverage, adherence to specifications, and overall user experience—including usability, accessibility, and intuitive navigation.",
             verticalPosition: 0,
             connectedTo: ["com4", "dc3"],
             position: "both",
@@ -258,7 +264,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "rev2",
             title: "Review Round 2 Designs",
             icon: "/assets/icons/reviewRound.svg",
-            tooltip: "Review panel evaluates revised design submissions",
+            tooltip:
+              "Final designs were reviewed by experts to select winners based on design quality and alignment with NASA's goals.",
             verticalPosition: 1,
             connectedTo: "com5",
             position: "end",
@@ -282,7 +289,7 @@ export const KANBAN_DATA: KanbanData = {
             title: "Start Engagement",
             icon: "/assets/icons/devCustomer.svg",
             tooltip:
-              "NASA initiated the project with Topcoder to redesign its drone control interface for safety and usability.",
+              "T-Mobile engaged Topcoder to build custom JIRA-based dashboards to enhance agile team visibility.",
             connectedTo: "do1",
             position: "start",
             verticalPosition: 0,
@@ -291,7 +298,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dc2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/devCustomer.svg",
-            tooltip: "Customer collaborates on project requirements",
+            tooltip:
+              "T-Mobile worked with Topcoder to define dashboard metrics, data sources, and user flows.",
             connectedTo: ["dd2"],
             position: "both",
             verticalPosition: 1,
@@ -301,7 +309,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "reviewaccept",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/devCustomer.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "T-Mobile reviewed the final implementation and approved the solution after verifying all deliverables.",
             verticalPosition: 6,
             connectedTo: "reviewAccept",
             position: "both",
@@ -311,14 +320,15 @@ export const KANBAN_DATA: KanbanData = {
       },
       {
         id: "delivery",
-        title: "Delivery Platform",
+        title: "Topcoder Delivery",
         icon: "./assets/icons/topcoder.png",
         items: [
           {
             id: "dd1",
-            title: "Requirement and Feasible Study",
+            title: "Requirement & Feasible Study",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Analyze requirements and conduct feasibility study",
+            tooltip:
+              "Topcoder assessed the feasibility of integrating JIRA APIs and building interactive dashboards.",
             connectedTo: "do1",
             position: "end",
             isVerticalConnection: true,
@@ -328,7 +338,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Topcoder team collaborates on requirements",
+            tooltip:
+              "Worked closely with T-Mobile to align feature requirements with user needs and technical constraints.",
             connectedTo: ["dc2", "do2", "dd3"],
             position: "both",
             verticalPosition: 1,
@@ -339,7 +350,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd3",
             title: "Development Challenge",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage design challenge",
+            tooltip:
+              "Topcoder launched a development challenge to implement real-time dashboards with filters, charts, and custom views.",
             verticalPosition: 2,
             connectedTo: ["do3", "dd2"],
             position: "both",
@@ -347,9 +359,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "dd4",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage documentation and forum content",
+            tooltip:
+              "Challenge included detailed docs and dedicated forums to support participants and answer questions.",
             verticalPosition: 3,
             connectedTo: "com3",
             position: "both",
@@ -366,7 +379,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do1",
             title: "Team Allocation",
             icon: "/assets/icons/teamAllocation.svg",
-            tooltip: "Operations team assigns resources",
+            tooltip:
+              "A delivery team including PM, copilot and a technical reviewer was assigned to support the challenge lifecycle.",
             connectedTo: ["dc1", "dd1"],
             position: "both",
             verticalConnectionTarget: "dd1",
@@ -374,9 +388,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "do2",
-            title: "Write Specification",
+            title: "Write Specifications",
             icon: "/assets/icons/specification.svg",
-            tooltip: "Platform team writes detailed specifications",
+            tooltip:
+              "Created detailed specifications including API usage, chart requirements, and expected outputs.",
             connectedTo: "dd2",
             position: "end",
             verticalPosition: 1,
@@ -385,7 +400,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do3",
             title: "Challenge Posting",
             icon: "/assets/icons/challengePosting.png",
-            tooltip: "Post the challenge on the platform",
+            tooltip:
+              "Published the development challenge on Topcoder’s platform for global talent participation.",
             verticalPosition: 2,
             connectedTo: ["dd3", "do4"],
             position: "both",
@@ -395,7 +411,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do4",
             title: "Notification",
             icon: "/assets/icons/notification.svg",
-            tooltip: "Send notifications to relevant stakeholders",
+            tooltip:
+              "The Topcoder community was notified via emails, platform alerts, and social media posts.",
             verticalPosition: 3,
             connectedTo: ["do3", "com1"],
             position: "both",
@@ -412,16 +429,18 @@ export const KANBAN_DATA: KanbanData = {
             id: "com1",
             title: "Join Challenge",
             icon: "/assets/icons/community.svg",
-            tooltip: "Community members join the challenge",
+            tooltip:
+              "Developers joined to build dashboard features using JavaScript, JIRA APIs, and D3.js.",
             verticalPosition: 0,
             connectedTo: "do4",
             position: "end",
           },
           {
             id: "com2",
-            title: "Ask question",
+            title: "Ask questions",
             icon: "/assets/icons/askquestion.svg",
-            tooltip: "Community members can ask questions about the challenge",
+            tooltip:
+              "Participants used forums to ask technical questions and get clarifications from the copilot.",
             verticalPosition: 1,
             connectedTo: ["com1", "com3"],
             position: "both",
@@ -430,10 +449,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "com3",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/documentationAndForum.svg",
             tooltip:
-              "Access documentation and participate in forum discussions",
+              "Resources included API docs, dataset examples, and UI/UX guidelines for implementation.",
             verticalPosition: 2,
             connectedTo: ["com2", "dd4", "com4"],
             position: "both",
@@ -445,7 +464,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "com4",
             title: "Submit Solutions",
             icon: "/assets/icons/submitRound1Design.svg",
-            tooltip: "Community members submit their initial design proposals",
+            tooltip:
+              "Final submissions included working code, deployment instructions, and documentation.",
             verticalPosition: 3,
             connectedTo: ["com3", "rev1"],
             position: "both",
@@ -460,18 +480,20 @@ export const KANBAN_DATA: KanbanData = {
         items: [
           {
             id: "revs",
-            title: "Review Submission",
+            title: "Review Submissions",
             icon: "/assets/icons/reviewRound.svg",
-            tooltip: "Review panel evaluates initial design submissions",
+            tooltip:
+              "Topcoder staff and technical experts reviewed solutions for functionality, completeness, and UI alignment.",
             verticalPosition: 0,
             connectedTo: "com4",
             position: "end",
           },
           {
             id: "score",
-            title: "Score Submission",
+            title: "Score Submissions",
             icon: "/assets/icons/scoreSubmission.svg",
-            tooltip: "sample",
+            tooltip:
+              "Submissions were scored on integration quality, chart interactivity, and adherence to specs.",
             verticalPosition: 1,
             connectedTo: ["revs", "reviewAccept"],
             position: "both",
@@ -482,7 +504,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "reviewAccept",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/finalReview.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "Top solutions were validated and delivered for final customer approval.",
             verticalPosition: 2,
             connectedTo: ["score", "dd4", "prepare"],
             position: "both",
@@ -492,9 +515,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "prepare",
-            title: "Prepare Whitepaper",
+            title: "Prepare Whitepapers",
             icon: "/assets/icons/prepareWhitepaper.svg",
-            tooltip: "Prepare whitepaper for the customer",
+            tooltip:
+              "Winning solutions were documented in whitepapers describing implementation and future recommendations.",
             verticalPosition: 3,
             connectedTo: "rev2",
             isVerticalConnection: true,
@@ -519,7 +543,7 @@ export const KANBAN_DATA: KanbanData = {
             title: "Start Engagement",
             icon: "/assets/icons/qaCustomer.svg",
             tooltip:
-              "NASA initiated the project with Topcoder to redesign its drone control interface for safety and usability.",
+              "Microsoft engaged Topcoder to improve testing velocity through global crowdsourced QA.",
             connectedTo: "do1",
             position: "start",
             verticalPosition: 0,
@@ -528,7 +552,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dc2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/qaCustomer.svg",
-            tooltip: "Customer collaborates on project requirements",
+            tooltip:
+              "Microsoft and Topcoder collaborated to define goals for weekly regression and in-the-wild testing.",
             connectedTo: ["dd2"],
             position: "both",
             verticalPosition: 1,
@@ -538,7 +563,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "reviewaccept",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/qaCustomer.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "Topcoder assessed testing needs, proposed a recurring challenge model, and scoped deliverables.",
             verticalPosition: 6,
             connectedTo: "reviewAccept",
             position: "both",
@@ -548,12 +574,12 @@ export const KANBAN_DATA: KanbanData = {
       },
       {
         id: "delivery",
-        title: "Delivery Platform",
+        title: "Topcoder Delivery",
         icon: "./assets/icons/topcoder.png",
         items: [
           {
             id: "dd1",
-            title: "Requirement and Feasible Study",
+            title: "Requirement & Feasible Study",
             icon: "/assets/icons/topcoder.png",
             tooltip: "Analyze requirements and conduct feasibility study",
             connectedTo: "do1",
@@ -565,7 +591,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Topcoder team collaborates on requirements",
+            tooltip:
+              "Worked closely with Microsoft to finalize testing workflows, platforms, and reporting expectations.",
             connectedTo: ["dc2", "do2", "dd3"],
             position: "both",
             verticalPosition: 1,
@@ -576,7 +603,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd3",
             title: "QA Challenge",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage design challenge",
+            tooltip:
+              "The QA challenge was launched to execute both structured regression and exploratory testing.",
             verticalPosition: 2,
             connectedTo: ["do3", "dd2"],
             position: "both",
@@ -584,9 +612,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "dd4",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage documentation and forum content",
+            tooltip:
+              "Provided test plans, device targets, and QA templates; opened forums for participant support.",
             verticalPosition: 3,
             connectedTo: "com3",
             position: "both",
@@ -603,7 +632,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do1",
             title: "Team Allocation",
             icon: "/assets/icons/teamAllocation.svg",
-            tooltip: "Operations team assigns resources",
+            tooltip:
+              "Assigned a copilot and QA manager to coordinate logistics, guide testers, and ensure quality results.",
             connectedTo: ["dc1", "dd1"],
             position: "both",
             verticalConnectionTarget: "dd1",
@@ -611,9 +641,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "do2",
-            title: "Write Specification",
+            title: "Write Specifications",
             icon: "/assets/icons/specification.svg",
-            tooltip: "Platform team writes detailed specifications",
+            tooltip:
+              "Wrote detailed testing instructions, device/browser coverage needs, and reporting formats.",
             connectedTo: "dd2",
             position: "end",
             verticalPosition: 1,
@@ -622,7 +653,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do3",
             title: "Challenge Posting",
             icon: "/assets/icons/challengePosting.png",
-            tooltip: "Post the challenge on the platform",
+            tooltip:
+              "Published the QA challenge on the platform to recruit global testers.",
             verticalPosition: 2,
             connectedTo: ["dd3", "do4"],
             position: "both",
@@ -632,7 +664,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do4",
             title: "Notification",
             icon: "/assets/icons/notification.svg",
-            tooltip: "Send notifications to relevant stakeholders",
+            tooltip:
+              "The Topcoder community was notified via emails, platform alerts, and social media posts.",
             verticalPosition: 3,
             connectedTo: ["do3", "com1"],
             position: "both",
@@ -649,16 +682,18 @@ export const KANBAN_DATA: KanbanData = {
             id: "com1",
             title: "Join Challenge",
             icon: "/assets/icons/community.svg",
-            tooltip: "Community members join the challenge",
+            tooltip:
+              "QA experts across regions joined to participate in the scheduled test cycles.",
             verticalPosition: 0,
             connectedTo: "do4",
             position: "end",
           },
           {
             id: "com2",
-            title: "Ask question",
+            title: "Ask questions",
             icon: "/assets/icons/askquestion.svg",
-            tooltip: "Community members can ask questions about the challenge",
+            tooltip:
+              "Testers used the forum to clarify requirements and edge cases with the challenge manager.",
             verticalPosition: 1,
             connectedTo: ["com1", "com3"],
             position: "both",
@@ -667,10 +702,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "com3",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/documentationAndForum.svg",
             tooltip:
-              "Access documentation and participate in forum discussions",
+              "Accessed bug reporting formats, environment setup instructions, and discussion threads.",
             verticalPosition: 2,
             connectedTo: ["com2", "dd4", "com4"],
             position: "both",
@@ -682,7 +717,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "com4",
             title: "Submit Solutions",
             icon: "/assets/icons/submitRound1Design.svg",
-            tooltip: "Community members submit their initial design proposals",
+            tooltip:
+              "Participants submitted detailed test reports, defect logs, and screenshots/videos of findings.",
             verticalPosition: 3,
             connectedTo: ["com3", "rev1"],
             position: "both",
@@ -697,18 +733,20 @@ export const KANBAN_DATA: KanbanData = {
         items: [
           {
             id: "revs",
-            title: "Review Submission",
+            title: "Review Submissions",
             icon: "/assets/icons/reviewRound.svg",
-            tooltip: "Review panel evaluates initial design submissions",
+            tooltip:
+              "Topcoder staff and Microsoft QA reviewers verified and evaluated submitted bug reports.",
             verticalPosition: 0,
             connectedTo: "com4",
             position: "end",
           },
           {
             id: "score",
-            title: "Score Submission",
+            title: "Score Submissions",
             icon: "/assets/icons/scoreSubmission.svg",
-            tooltip: "sample",
+            tooltip:
+              "Defects were scored based on severity, reproducibility, and relevance to the test scope.",
             verticalPosition: 1,
             connectedTo: ["revs", "reviewAccept"],
             position: "both",
@@ -719,7 +757,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "reviewAccept",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/finalReview.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "Final shortlist of validated issues was approved and prioritized by Microsoft.",
             verticalPosition: 2,
             connectedTo: ["score", "dd4", "prepare"],
             position: "both",
@@ -729,9 +768,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "prepare",
-            title: "Prepare Whitepaper",
+            title: "Prepare Whitepapers",
             icon: "/assets/icons/prepareWhitepaper.svg",
-            tooltip: "Prepare whitepaper for the customer",
+            tooltip:
+              "Top submissions were summarized in QA reports and whitepapers for Microsoft’s internal use.",
             verticalPosition: 3,
             connectedTo: "rev2",
             isVerticalConnection: true,
@@ -755,7 +795,7 @@ export const KANBAN_DATA: KanbanData = {
             title: "Start Engagement",
             icon: "/assets/icons/marathonCustomer.svg",
             tooltip:
-              "NASA initiated the project with Topcoder to redesign its drone control interface for safety and usability.",
+              "Harvard Medical School reached out to Topcoder with their project requirements to improve tumor detection.",
             connectedTo: "do1",
             position: "start",
             verticalPosition: 0,
@@ -764,7 +804,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dc2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/marathonCustomer.svg",
-            tooltip: "Customer collaborates on project requirements",
+            tooltip:
+              "Customer and Topcoder delivery team work together to gather detailed requirements and define project goals.",
             connectedTo: ["dd2"],
             position: "both",
             verticalPosition: 1,
@@ -774,7 +815,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "marathonreview",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/marathonCustomer.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "Harvard reviewed all deliverables and granted final acceptance after thorough testing and documentation.",
             verticalPosition: 6,
             connectedTo: "reviewAccept",
             position: "both",
@@ -784,14 +826,15 @@ export const KANBAN_DATA: KanbanData = {
       },
       {
         id: "delivery",
-        title: "Delivery Platform",
+        title: "Topcoder Delivery",
         icon: "./assets/icons/topcoder.png",
         items: [
           {
             id: "dd1",
-            title: "Requirement and Feasible Study",
+            title: "Requirement & Feasible Study",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Analyze requirements and conduct feasibility study",
+            tooltip:
+              "Topcoder conducted a feasibility study with the copilot to assess project viability and direction.",
             connectedTo: "do1",
             position: "end",
             isVerticalConnection: true,
@@ -801,7 +844,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Topcoder team collaborates on requirements",
+            tooltip:
+              "Worked closely with Harvard to refine problem statements and define clear challenge goals. \nThe Topcoder team identified and proposed three distinct challenges to address the problem:\nChallenge One: Locate the tumor and trace it.\nChallenge Two: Improve therapeutic trace.\nChallenge Three: An invite-only challenge for final enhancement and fixes.",
             connectedTo: ["dc2", "do2", "DEprep"],
             position: "both",
             verticalPosition: 1,
@@ -812,7 +856,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "DEprep",
             title: "Data Engineering & Prep",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage marathon match",
+            tooltip:
+              "Prepared datasets and cleaned data to ensure it was usable for the challenge participants.",
             verticalPosition: 2,
             connectedTo: ["dd2", "dd4"],
             isVerticalConnection: true,
@@ -821,7 +866,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "marathonmatch",
             title: "Marathon Match",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage documentation and forum content",
+            tooltip:
+              "Topcoder designed and launched three distinct challenges to solve different parts of the problem.",
             verticalPosition: 2,
             connectedTo: ["challengeposting", "DEprep"],
             position: "both",
@@ -829,9 +875,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "dd4",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage documentation and forum content",
+            tooltip:
+              "Created supporting documentation and set up forums to guide participants and answer questions.",
             verticalPosition: 3,
             connectedTo: "com3",
             position: "both",
@@ -848,7 +895,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do1",
             title: "Team Allocation",
             icon: "/assets/icons/teamAllocation.svg",
-            tooltip: "Operations team assigns resources",
+            tooltip:
+              "A dedicated team, including a copilot and project manager, was assigned to manage the challenge.",
             connectedTo: ["dc1", "dd1"],
             position: "both",
             verticalConnectionTarget: "dd1",
@@ -856,9 +904,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "do2",
-            title: "Write Specification",
+            title: "Write Specifications",
             icon: "/assets/icons/specification.svg",
-            tooltip: "Platform team writes detailed specifications",
+            tooltip:
+              "Challenge specs were created by the copilot to outline objectives, rules, datasets, and scoring details.",
             connectedTo: "dd2",
             position: "end",
             verticalPosition: 1,
@@ -867,7 +916,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "challengeposting",
             title: "Challenge Posting",
             icon: "/assets/icons/challengePosting.png",
-            tooltip: "Post the challenge on the platform",
+            tooltip:
+              "Challenges were published on the Topcoder platform and made available to the global community.",
             verticalPosition: 2,
             connectedTo: ["marathonmatch", "notification"],
             position: "both",
@@ -877,7 +927,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "notification",
             title: "Notification",
             icon: "/assets/icons/notification.svg",
-            tooltip: "Send notifications to relevant stakeholders",
+            tooltip:
+              "The Topcoder community was notified via emails, platform alerts, and social media posts.",
             verticalPosition: 3,
             connectedTo: ["challengeposting", "joinchallenge"],
             position: "both",
@@ -894,24 +945,26 @@ export const KANBAN_DATA: KanbanData = {
             id: "joinchallenge",
             title: "Join Challenge",
             icon: "/assets/icons/community.svg",
-            tooltip: "Community members join the challenge",
+            tooltip:
+              "Members decided to join based on their expertise and interest in the problem.",
             verticalPosition: 0,
             connectedTo: "do4",
             position: "end",
           },
           {
             id: "com2",
-            title: "Ask question",
+            title: "Ask questions",
             icon: "/assets/icons/askquestion.svg",
-            tooltip: "Community members can ask questions about the challenge",
+            tooltip:
+              "Participants asked questions in forums or communicated directly with project managers.",
             verticalPosition: 1,
           },
           {
             id: "com3",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/documentationAndForum.svg",
             tooltip:
-              "Access documentation and participate in forum discussions",
+              "Forums and documentation helped participants understand the challenge and data context.",
             verticalPosition: 2,
             connectedTo: ["com2", "dd4", "com4"],
             position: "both",
@@ -923,7 +976,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "com4",
             title: "Submit Solutions",
             icon: "/assets/icons/submitRound1Design.svg",
-            tooltip: "Community members submit their initial design proposals",
+            tooltip:
+              "Participants submitted algorithms, code, and documentation as part of their final entries.",
             verticalPosition: 3,
             connectedTo: ["com3", "fedback"],
             position: "both",
@@ -934,7 +988,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "fedback",
             title: "Get Feedback",
             icon: "/assets/icons/feedback.svg",
-            tooltip: "Get feedback from the community",
+            tooltip:
+              "Real-time scoring enabled participants to test and improve solutions before the deadline.",
             verticalPosition: 4,
             connectedTo: ["com4", "review"],
             position: "both",
@@ -952,13 +1007,15 @@ export const KANBAN_DATA: KanbanData = {
             id: "autoScore",
             title: "Automated System Scoring",
             icon: "/assets/icons/autoScore.svg",
-            tooltip: "Automated system scoring",
+            tooltip:
+              "Solutions were scored using an automated system for immediate feedback. ",
           },
           {
             id: "reviewAccept",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/finalReview.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "A panel of Topcoder and external experts reviewed the top submissions.",
             verticalPosition: 2,
             connectedTo: ["score", "dd4", "prepare"],
             position: "both",
@@ -968,9 +1025,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "prepare",
-            title: "Prepare Whitepaper",
+            title: "Prepare Whitepapers",
             icon: "/assets/icons/prepareWhitepaper.svg",
-            tooltip: "Prepare whitepaper for the customer",
+            tooltip:
+              "Winners submitted whitepapers detailing their algorithms, which were shared with Harvard.",
             verticalPosition: 3,
             connectedTo: "rev2",
             isVerticalConnection: true,
@@ -994,7 +1052,7 @@ export const KANBAN_DATA: KanbanData = {
             title: "Start Engagement",
             icon: "/assets/icons/ideation.svg",
             tooltip:
-              "NASA initiated the project with Topcoder to redesign its drone control interface for safety and usability.",
+              "Estée Lauder engaged Topcoder to explore inclusive technology solutions for the beauty industry.",
             connectedTo: "do1",
             position: "start",
             verticalPosition: 0,
@@ -1003,7 +1061,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dc2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/ideation.svg",
-            tooltip: "Customer collaborates on project requirements",
+            tooltip:
+              "Customer and Topcoder delivery team work together to define goals, focus areas, and expectations for accessible beauty solutions.",
             connectedTo: ["dd2"],
             position: "both",
             verticalPosition: 1,
@@ -1013,7 +1072,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "reviewacceptidea",
             title: "Final Review & Acceptance",
             icon: "/assets/icons/ideation.svg",
-            tooltip: "Review panel evaluates final submissions",
+            tooltip:
+              "Estée Lauder reviewed the submissions, approved selected ideas, and finalized project handover.",
             verticalPosition: 6,
             connectedTo: "reviewAccept",
             position: "both",
@@ -1023,14 +1083,15 @@ export const KANBAN_DATA: KanbanData = {
       },
       {
         id: "delivery",
-        title: "Delivery Platform",
+        title: "Topcoder Delivery",
         icon: "./assets/icons/topcoder.png",
         items: [
           {
             id: "dd1",
-            title: "Requirement and Feasible Study",
+            title: "Requirement & Feasible Study",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Analyze requirements and conduct feasibility study",
+            tooltip:
+              "Topcoder assessed project feasibility, refined scope, and validated challenge structure for ideation goals.",
             connectedTo: "do1",
             position: "end",
             isVerticalConnection: true,
@@ -1040,7 +1101,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd2",
             title: "Collaborates on Requirements",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Topcoder team collaborates on requirements",
+            tooltip:
+              "Partnered with Estée Lauder to shape challenge themes, judging criteria, and submission guidelines.",
             connectedTo: ["dc2", "do2", "dd3"],
             position: "both",
             verticalPosition: 1,
@@ -1051,7 +1113,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "dd3",
             title: "Ideation Challenge",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage design challenge",
+            tooltip:
+              "Launched the challenge to crowdsource ideas for inclusive beauty technology solutions.",
             verticalPosition: 2,
             connectedTo: ["do3", "dd2"],
             position: "both",
@@ -1059,9 +1122,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "dd4",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/topcoder.png",
-            tooltip: "Create and manage documentation and forum content",
+            tooltip:
+              "Created supporting documentation and set up forums to guide participants and answer questions.",
             verticalPosition: 3,
             connectedTo: "com3",
             position: "both",
@@ -1078,7 +1142,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do1",
             title: "Team Allocation",
             icon: "/assets/icons/teamAllocation.svg",
-            tooltip: "Operations team assigns resources",
+            tooltip:
+              "A dedicated team, including a copilot and project manager, was assigned to manage the challenge.",
             connectedTo: ["dc1", "dd1"],
             position: "both",
             verticalConnectionTarget: "dd1",
@@ -1086,9 +1151,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "do2",
-            title: "Write Specification",
+            title: "Write Specifications",
             icon: "/assets/icons/specification.svg",
-            tooltip: "Platform team writes detailed specifications",
+            tooltip:
+              "Challenge specs were created by the copilot to outline objectives, rules and scoring details.",
             connectedTo: "dd2",
             position: "end",
             verticalPosition: 1,
@@ -1097,7 +1163,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do3",
             title: "Challenge Posting",
             icon: "/assets/icons/challengePosting.png",
-            tooltip: "Post the challenge on the platform",
+            tooltip:
+              "Challenges were published on the Topcoder platform and made available to the global community.",
             verticalPosition: 2,
             connectedTo: ["dd3", "do4"],
             position: "both",
@@ -1107,7 +1174,8 @@ export const KANBAN_DATA: KanbanData = {
             id: "do4",
             title: "Notification",
             icon: "/assets/icons/notification.svg",
-            tooltip: "Send notifications to relevant stakeholders",
+            tooltip:
+              "The Topcoder community was notified via emails, platform alerts, and social media posts.",
             verticalPosition: 3,
             connectedTo: ["do3", "com1"],
             position: "both",
@@ -1124,16 +1192,18 @@ export const KANBAN_DATA: KanbanData = {
             id: "com1",
             title: "Join Challenge",
             icon: "/assets/icons/community.svg",
-            tooltip: "Community members join the challenge",
+            tooltip:
+              "Members decided to join based on their expertise and interest in the problem.",
             verticalPosition: 0,
             connectedTo: "do4",
             position: "end",
           },
           {
             id: "com2",
-            title: "Ask question",
+            title: "Ask questions",
             icon: "/assets/icons/askquestion.svg",
-            tooltip: "Community members can ask questions about the challenge",
+            tooltip:
+              "Participants asked questions in forums or communicated directly with project managers.",
             verticalPosition: 1,
             connectedTo: ["com1", "com3"],
             position: "both",
@@ -1142,10 +1212,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "com3",
-            title: "Documentation & forum",
+            title: "Documentation & forums",
             icon: "/assets/icons/documentationAndForum.svg",
             tooltip:
-              "Access documentation and participate in forum discussions",
+              "Forums and documentation helped participants understand the challenge and data context.",
             verticalPosition: 2,
             connectedTo: ["com2", "dd4", "com4"],
             position: "both",
@@ -1155,9 +1225,10 @@ export const KANBAN_DATA: KanbanData = {
           },
           {
             id: "com4",
-            title: "Submit Solutions",
+            title: "Submit Ideas",
             icon: "/assets/icons/submitRound1Design.svg",
-            tooltip: "Community members submit their initial design proposals",
+            tooltip:
+              "Participants submitted their final ideas in the form of detailed documents.",
             verticalPosition: 3,
             connectedTo: ["com3", "rev1"],
             position: "both",
@@ -1172,15 +1243,16 @@ export const KANBAN_DATA: KanbanData = {
         items: [
           {
             id: "reviewIdea",
-            title: "Review Idea",
+            title: "Review Ideas",
             icon: "/assets/icons/reviewRound.svg",
-            tooltip: "Panel reviews and evaluates code submissions",
+            tooltip: "A panel of Topcoder experts reviewed the submissions.",
           },
           {
             id: "prepareIdea",
-            title: "Prepare Whitepaper",
+            title: "Prepare Whitepapers",
             icon: "/assets/icons/prepareWhitepaper.svg",
-            tooltip: "Prepare whitepaper for the customer",
+            tooltip:
+              "Winners submitted whitepapers detailing their ideas, which were shared with Estée Lauder.",
             verticalPosition: 3,
           },
         ],

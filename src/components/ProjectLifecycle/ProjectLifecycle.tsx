@@ -32,6 +32,9 @@ const ProjectLifecycle: React.FC = () => {
       </div>
 
       <div className="project-lifecycle__board-container">
+        <p style={{ marginLeft: "100px" }}>
+          Click the next column's header to see the interaction
+        </p>
         <KanbanBoard
           columns={KANBAN_DATA[selectedProject]?.columns || []}
           key={selectedProject}

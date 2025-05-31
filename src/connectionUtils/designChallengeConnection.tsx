@@ -225,14 +225,15 @@ export const calculateConnections = (
     const writeSpecRect = writeSpecItem.getBoundingClientRect();
     const collabRect = collabReqItem2.getBoundingClientRect();
     const boardRect = boardRef.current.getBoundingClientRect();
-
+    //writeSpecRect
+    //collabRect
     newConnections.push({
-      startX: writeSpecRect.left - boardRect.left - 2,
-      startY: writeSpecRect.top - boardRect.top + writeSpecRect.height / 2,
-      endX: collabRect.right - boardRect.left + 2,
-      endY: collabRect.top - boardRect.top + collabRect.height / 2,
+      startX: collabRect.right - boardRect.left + 2,
+      startY: collabRect.top - boardRect.top + collabRect.height / 2,
+      endX: writeSpecRect.left - boardRect.left - 2,
+      endY: writeSpecRect.top - boardRect.top + writeSpecRect.height / 2,
       isVertical: false,
-      connectionType: "right-to-left",
+      connectionType: "left-to-right",
     });
   }
 
@@ -814,33 +815,13 @@ export const calculateConnections = (
     const boardRect = boardRef.current.getBoundingClientRect();
 
     newConnections.push({
-      startX: customerRect.right - boardRect.left + 2,
+      startX: customerRect.right - boardRect.left,
       startY: customerRect.top - boardRect.top + customerRect.height / 2,
       endX: finalRect.left - boardRect.left - 2,
       endY: finalRect.top - boardRect.top + finalRect.height / 2,
       isVertical: false,
       connectionType: "left-to-right",
     });
-  }
-
-  /// Connection: Final Review & Acceptance (Review to Customer)
-  const finalReviewAcceptItemLeft = boardRef.current.querySelector(
-    '[data-item-id="reviewAccept"]'
-  );
-  const customerReviewItemDev2 = boardRef.current.querySelector(
-    '[data-item-id="reviewaccept"]'
-  );
-
-  if (
-    finalReviewAcceptItemLeft &&
-    customerReviewItemDev2 &&
-    isColumnActiveForConnection(finalReviewAcceptItemLeft) &&
-    isColumnActiveForConnection(customerReviewItemDev2)
-  ) {
-    const finalRect = finalReviewAcceptItemLeft.getBoundingClientRect();
-    const customerRect = customerReviewItemDev2.getBoundingClientRect();
-    const boardRect = boardRef.current.getBoundingClientRect();
-
     newConnections.push({
       startX: finalRect.left - boardRect.left - 2,
       startY: finalRect.top - boardRect.top + finalRect.height / 2,
@@ -851,7 +832,7 @@ export const calculateConnections = (
     });
   }
 
-  // Bidirectional connection: Final Review & Acceptance (Customer to Review, Marathon)
+  // Bidirectional connection: Final Review & Acceptance (Customer  Marathon)
   const finalReviewAcceptItemMarathon = boardRef.current.querySelector(
     '[data-item-id="reviewAccept"]'
   );
@@ -870,7 +851,7 @@ export const calculateConnections = (
     const boardRect = boardRef.current.getBoundingClientRect();
 
     newConnections.push({
-      startX: customerRect.right - boardRect.left + 2,
+      startX: customerRect.right - boardRect.left,
       startY: customerRect.top - boardRect.top + customerRect.height / 2,
       endX: finalRect.left - boardRect.left - 2,
       endY: finalRect.top - boardRect.top + finalRect.height / 2,
@@ -1056,7 +1037,7 @@ export const calculateConnections = (
 
     const startX = reviewRect.left - boardRect.left + reviewRect.width / 2.8;
     const startY = reviewRect.bottom - boardRect.top;
-    const midY = startY + 40;
+    const midY = startY + 130;
 
     newConnections.push({
       startX,
